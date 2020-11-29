@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "GCC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include",
+                "C:\\MinGW\\include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "compilerArgs": [],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        },
+        {
+            "name": "GCC",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
