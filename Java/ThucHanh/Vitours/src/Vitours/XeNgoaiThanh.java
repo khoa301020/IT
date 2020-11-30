@@ -1,62 +1,38 @@
-package Student;
+package Vitours;
 
-public class Student extends Person {
+public class XeNgoaiThanh extends ChuyenXe {
 
-    private String id;
-    private float mark;
-    private String email;
+    private String noiDen;
+    private int soNgay;
 
-    public Student() {
+    public XeNgoaiThanh() {
 
     }
 
-    public Student(String id, float mark, String email) {
+    public XeNgoaiThanh(String noiDen, int soNgay) {
         super();
-        this.id = id;
-        this.mark = mark;
-        this.email = email;
+        this.noiDen = noiDen;
+        this.soNgay = soNgay;
     }
 
-    public String getId() {
-        return id;
+    public String getNoiDen() {
+        return noiDen;
     }
 
-    public boolean setId(String id) {
-        if(id != null && id.length()==8) {
-            this.id = id;
+    public void setnoiDen(String noiDen) {
+        this.noiDen = noiDen;
+    }
+
+    public float getSoNgay() {
+        return soNgay;
+    }
+
+    public boolean setSoNgay(int soNgay) {
+        if(soNgay >= 0) {
+            this.soNgay = soNgay;
             return true;
         } else {
-            System.err.println("Moi ban nhap lai ma sinh vien (do dai = 8 ki tu): ");
-            return false;
-        }
-
-    }
-
-    public float getMark() {
-        return mark;
-    }
-
-    public boolean setMark(float mark) {
-        if(mark >= 0 && mark <= 10) {
-            this.mark = mark;
-            return true;
-        } else {
-            System.err.println("Moi ban nhap lai diem(diem >= 0 && diem <= 10): ");
-            return false;
-        }
-
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public boolean setEmail(String email) {
-        if(email != null && !email.contains(" ") && email.contains("@")) {
-            this.email = email;
-            return true;
-        } else {
-            System.err.println("Moi ban nhap lai email(email khong de trong, khong chua khoang trang va chua dau @): ");
+            System.err.println("Moi ban nhap lai so ngay (soNgay>=0): ");
             return false;
         }
 
@@ -66,28 +42,13 @@ public class Student extends Person {
     public void inputInfo() {
         super.inputInfo();
 
-        System.out.println("Moi ban nhap ma sinh vien: ");
-        while(true) {
-            String masv = sc.nextLine();
-            boolean check = setId(masv);
-            if (check) {
-                break;
-            }
-        }
+        System.out.println("Moi ban nhap noi den: ");
+        noiDen = sc.nextLine();
 
-        System.out.println("Moi ban nhap diem trung binh: ");
+        System.out.println("Moi ban nhap so ngay: ");
         while(true) {
-            float diemTB = Float.parseFloat(sc.nextLine());
-            boolean check = setMark(diemTB);
-            if(check) {
-                break;
-            }
-        }
-
-        System.out.println("Moi ban nhap email: ");
-        while(true) {
-            String email = sc.nextLine();
-            boolean check = setEmail(email);
+            int soNgay = Integer.parseInt(sc.nextLine());
+            boolean check = setSoNgay(soNgay);
             if(check) {
                 break;
             }
@@ -97,16 +58,8 @@ public class Student extends Person {
     @Override
     public void showInfo() {
         super.showInfo();
-        System.out.println("Ma sinh vien: "+id);
-        System.out.println("Diem trung binh: "+mark);
-        System.out.println("Email: "+email);
+        System.out.println("Noi den: "+ noiDen);
+        System.out.println("So ngay: "+ soNgay);
         System.out.println();
-    }
-
-    public boolean checkScholarship() {
-        if(mark > 8.0) {
-            return true;
-        }
-        return false;
     }
 }

@@ -1,79 +1,80 @@
-package Student;
+package Vitours;
 
 import java.util.Scanner;
 
-public class Person {
+public class ChuyenXe {
 
-    private String name;
-    private String gender;
-    private String dateOfBirth;
-    private String address;
+    private String maChuyenXe;
+    private String tenTaiXe;
+    private String soXe;
+    private int doanhThu;
 
     final static Scanner sc = new Scanner(System.in);
-    public Person() {
+    public ChuyenXe() {
 
     }
 
-    public Person(String name, String gender, String dateOfBirth, String address) {
+    public ChuyenXe(String maChuyenXe, String tenTaiXe, String soXe, int doanhThu) {
         super();
-        this.name = name;
-        this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
-        this.address = address;
+        this.maChuyenXe = maChuyenXe;
+        this.tenTaiXe = tenTaiXe;
+        this.soXe = soXe;
+        this.doanhThu = doanhThu;
     }
 
-    public String getName() {
-        return name;
+    public String getMaChuyenXe() {
+        return maChuyenXe;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMaChuyenXe(String maChuyenXe) {
+        this.maChuyenXe = maChuyenXe;
     }
 
-    public String getGender() {
-        return gender;
+    public String getTenTaiXe() {
+        return tenTaiXe;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setTenTaiXe(String tenTaiXe) {
+        this.tenTaiXe = tenTaiXe;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getSoXe() {
+        return soXe;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setSoXe(String soXe) {
+        this.soXe = soXe;
     }
 
-    public String getAddress() {
-        return address;
+    public int getDoanhThu() {
+        return doanhThu;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDoanhThu(int doanhThu) {
+        this.doanhThu = doanhThu;
     }
 
     public void inputInfo() {
-        System.out.println("Moi ban nhap ten: ");
-        name = sc.nextLine();
+        System.out.println("------------------------------");
+        System.out.println("Moi ban nhap ma chuyen xe: ");
+        maChuyenXe = sc.nextLine();
 
-        System.out.println("Moi ban nhap gioi tinh: ");
-        gender = sc.nextLine();
+        System.out.println("Moi ban nhap ten tai xe: ");
+        tenTaiXe = sc.nextLine();
 
-        System.out.println("Moi ban nhap ngay sinh: ");
-        dateOfBirth = sc.nextLine();
+        System.out.println("Moi ban nhap so xe: ");
+        soXe = sc.nextLine();
 
-        System.out.println("Moi ban nhap dia chi: ");
-        address = sc.nextLine();
+        System.out.println("Moi ban nhap doanh thu: ");
+        doanhThu = Integer.parseInt(sc.nextLine());
     }
 
     public void showInfo() {
         System.out.println("------------------------------");
-        System.out.println("Ten : "+name);
-        System.out.println("Gioi tinh: "+gender);
-        System.out.println("Ngay sinh: "+dateOfBirth);
-        System.out.println("Dia chi: "+address);
+        System.out.println("Ma chuyen xe : "+ maChuyenXe);
+        System.out.println("Ten tai xe: "+ tenTaiXe);
+        System.out.println("So xe: "+ soXe);
+        System.out.println("Doanh thu: "+ doanhThu);
     }
 }
 
