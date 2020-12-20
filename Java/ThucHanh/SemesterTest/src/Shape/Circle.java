@@ -1,24 +1,37 @@
 package Shape;
 
 public class Circle extends Shape {
-    private final double radius;
+
+    public double radius;
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     final double pi = Math.PI;
 
     public Circle() {
-        this(1);
+        this(1,"none");
     }
-    public Circle(double radius) {
+
+    public Circle(double radius, String color) {
         this.radius = radius;
+        this.color = color;
     }
 
     @Override
     public double area() {
-        // A = π r^2
         return pi * Math.pow(radius, 2);
     }
 
-    public double perimeter() {
-        // P = 2πr
-        return 2 * pi * radius;
+    @Override
+    public void ToString() {
+        System.out.println("----------Circle----------");
+        System.out.println("Area: "+area());
+        System.out.println("Color: "+color);
     }
 }

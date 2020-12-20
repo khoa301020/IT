@@ -1,8 +1,6 @@
-package Bai1;
+package Bai1_Employee;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
 
 public class NhanVien {
     final static Scanner sc = new Scanner(System.in);
@@ -78,3 +76,5 @@ public class NhanVien {
         System.out.println("Luong: "+Salary);
     }
 }
+
+

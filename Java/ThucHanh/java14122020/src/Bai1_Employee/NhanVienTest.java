@@ -1,14 +1,14 @@
-package Bai1;
+package Bai1_Employee;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NhanVienTest {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        FileWriter writer = new FileWriter("output.txt");
+
 
         ArrayList<NhanVien> ListStd = new ArrayList<NhanVien>();
 
@@ -19,12 +19,21 @@ public class NhanVienTest {
             NhanVien st = new NhanVien();
             st.inputInfo();
             ListStd.add(st);
+            printArrayListToFile(ListStd.get(i));
         }
 
         for (i = 0; i < ListStd.size(); i++) {
             ListStd.get(i).showInfo();
         }
-
-
     }
-}
+
+
+public static void printArrayListToFile(ArrayList<NhanVien> arrayList) throws IOException {
+    PrintWriter writer = new PrintWriter("D:\\IT\\Java\\ThucHanh\\java14122020\\src\\Bai1_Employee\\output.txt");
+    for (NhanVien line : arrayList) {
+        writer.println(line);
+    }
+        writer.close();
+}}
+
+

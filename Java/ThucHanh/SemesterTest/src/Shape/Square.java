@@ -1,24 +1,36 @@
 package Shape;
 
-public class Rectangle extends Shape {
-    private final double width, length; //sides
+public class Square extends Shape {
 
-    public Rectangle() {
-        this(1,1);
+    public double edge;
+
+    public double getEdge() {
+        return edge;
     }
-    public Rectangle(double width, double length) {
-        this.width = width;
-        this.length = length;
+
+    public void setEdge(double edge) {
+        this.edge = edge;
+    }
+
+    public Square() {
+        this(1,"none");
+    }
+
+    public Square(double edge, String color) {
+        this.edge = edge;
+        this.color = color;
     }
 
     @Override
     public double area() {
-        return width * length;
+        return Math.pow(edge,2);
     }
 
     @Override
-    public double perimeter() {
-        return 2 * (width + length);
+    public void ToString() {
+        System.out.println("----------Square----------");
+        System.out.println("Area: "+area());
+        System.out.println("Color: "+color);
     }
 
 }
